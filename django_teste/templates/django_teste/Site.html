@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title> Site implementado </title>
+		<meta charset="utf-8">	
+		<script language="JavaScript" src="confidencial/function.js"></script>	
+	</head>
+
+	<body onkeydown='return false' style="background-color: #1C1C1C">
+		<script>
+			for (i=0; i<3; i++){
+				var senha = prompt("Insira a nota que este trabalho vai receber");
+				if(senha==100){
+					location.href="confidencial/Projeto.html";
+					var aux = true;
+					break;
+				}
+				else{
+					alert("O valor digitado não condiz com a realidade");
+				}
+			}
+
+			if (aux!=true){
+				alert("Você não merece estar aqui");
+			}
+		</script>
+	</body>
+
+</html>

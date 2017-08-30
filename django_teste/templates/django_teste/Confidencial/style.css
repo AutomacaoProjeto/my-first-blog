@@ -1,0 +1,131 @@
+.fixado{
+	position: fixed; 
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 30px; 
+	left: 0px;
+	width: 1349px;
+	height: 100px;
+	background-color: #FE5F55;
+	color: white;
+	font-family: Century Gothic;		
+}
+
+.fixado2{
+	position: fixed; 
+	margin-top: 0px;
+	top: 0px; 
+	left: 0px;
+	width: 1349px;
+	height: 100px;
+	background-color: #1C1C1C;
+	color: #1C1C1C;
+}
+
+.texto{
+	font-family: Century Gothic; 
+	font-style: normal;
+	font-size: 20px;
+	text-align:justify;
+
+}
+
+.titulo{
+	font-family: Century Gothic;
+
+}
+
+.rodape{
+	font-family: Century Gothic;
+	font-style: italic;
+	background-color: #8EE8BC;
+	color: #1C1C1C;
+	position: relative;
+	left: -325;
+	bottom: 0;
+	width: 1349px;
+	height: 100px;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	
+}
+
+.imagem1{
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	background: none;
+}
+
+.imagem2{
+	float: left;
+	margin: 10px 25px 8px 10px;
+}
+
+.menu{
+	font-family: Century Gothic;
+	position: absolute;
+	top: 300px;
+	left: 10px;
+}
+
+.tabela{
+	border: solid #048BA8;
+	height: 100px;
+	width: 600px;
+	text-align: center;
+	background: #F4E3B2;
+	font-family: Century Gothic;
+	
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	width: 200px;
+	font-size: 13pt;
+	border-bottom: 2px solid #048BA8;
+}
+
+ul li{
+	background:#F4E3B2;
+	position: relative;
+	color: #1C1C1C;
+}
+
+li ul{
+	position: absolute;
+	left: 202px;
+	top: 0;
+	display: none;
+	width: 120px;
+	border: 2px solid #ccc;
+	padding: 6px;
+	font-size:13pt;
+	text-align:center;
+}
+
+ul li a{
+	display: block;
+	color: #1C1C1C;
+	padding: 7px;
+	border: 2px solid #048BA8;
+	border-bottom: 0px;
+}
+
+li:hover ul {
+	display:block;
+}
+
+
+ul li a:hover{
+	background-color:#1C1C1C;
+	color: white;
+}
+

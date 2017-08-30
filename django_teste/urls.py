@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from django_teste.views import home
+from django_teste.views import sitezao
 
 urlpatterns = [
-	url(r'^$', home),
+	url(r'^bitch/$', sitezao),
 ]

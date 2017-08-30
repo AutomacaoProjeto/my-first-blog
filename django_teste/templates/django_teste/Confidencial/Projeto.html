@@ -1,0 +1,235 @@
+<html>
+	<head>
+		<title> Projeto Integrador </title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script type="text/javascript">
+			var vetor = [];
+			var problem = false;
+			var count = 0;
+
+			function salvar(condicional){
+				var nome = document.getElementById("nome").value;
+				var idade = document.getElementById("idade").value;
+				var music = document.getElementById("music").value;
+				var serie = document.getElementById("serie").value;
+
+				
+				if(condicional==true){
+					var obj = {
+						Nome: nome,
+						Idade: idade,
+						Musica: music,
+						Serie: serie,
+					}
+						var nome_novo = obj.Nome;  //Essa linha foi feita pra assegurar que a linha 34 vai funcionar independente se a 30 vai ser usada
+						
+						//(Tirando os espaços do nome)
+						var exp_espace = /\s/g;
+						nome_novo = (obj.Nome).replace(exp_espace, "");
+
+						//Tirando o "ç" e acentos
+						var exp_ajuste = /á|é|í|ó|ú|ç|ã|õ|â|ê|î|ô|û/ig;
+						nome_novo = (nome_novo).replace(exp_ajuste, "x"); //Se ao invés de colocar "nome_novo" colocasse "obj.Nome", ele anularia o 														que foi feito na linha anterior
+					
+					//Testando o "Nome"
+					var exp_nome = /\W|\d/;
+					if(exp_nome.test(nome_novo)==true){
+						problem = true;
+					}
+
+					else if(exp_nome.test(nome_novo)==false){
+						count+=1
+					}
+
+					//Testando a "Idade"
+					var exp_idade = /\D/;
+					if(exp_idade.test(obj.Idade)==true){
+						problem = true;
+					}
+
+					else if(exp_idade.test(obj.Idade)==false){
+						count+=1;
+					}
+
+					
+
+					//Parte final
+					if(problem==true){
+						document.getElementById("aviso").innerHTML = "*Algum dado não foi inserido corretamente";
+						setTimeout(desaparecer, 3000);
+					}
+					else if(count==2){
+						vetor.push(obj);
+					}
+
+					problem = false; //Se não fizer isso, quando algo escrito fosse errado (mesmo ao reescrever) ia apontar sempre como incorreto
+					count = 0;
+				}
+				
+
+
+			}
+
+			function verificar(){
+					salvar(false);
+					var op = prompt("Digite o número da pessoa")
+					alert("Nome: " + vetor[op-1].Nome + ", Idade: " + vetor[op-1].Idade + ", Música: " + vetor[op-1].Musica + ", Série: " + vetor[op-1].Serie);
+				}
+
+			function desaparecer(){
+				document.getElementById("aviso").innerHTML = "";
+				
+			}
+			
+		</script>
+
+		<style>
+			.button {
+			    background-color: #1C1C1C;
+			    border-color: #048BA8;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    font-size: 16px;
+			    font-family: Century Gothic;
+			    margin: 4px 2px;
+			    cursor: pointer;
+			}
+
+			.button:hover{
+				background-color: #F4E3B2;
+				color: #1C1C1C;
+			    transition-duration: 0.4s;
+			}
+
+		</style>
+		
+	</head>
+
+	<body style="background-color:#1C1C1C">
+
+		<center>
+		
+
+		<div style="color: white; background-color:none ; width: 700px;	position: relative; top: 270px;">
+			
+
+			<h2 class="titulo"> Por que fazer o projeto? </h2>
+			<p class="texto"> Procuramos evitar possíveis furtos por parte dos cobradores e poupar tempo e dinheiro, uma vez que não mais teria que contratar alguém para conferir manualmente os tickets e o valor obtido com suas vendas. </p>
+
+			<br>
+			<br>
+
+			<h2 class="titulo"> Resumo </h2>
+			<img src="cupom.jpg" class="imagem2" width="290">
+			<p class="texto"> Nós pretendemos melhorar o sistema de cobrança dos transportes de viagens intermunicipais. Iremos fazer uma máquina que irá registrar todas as vendas de passagens, assim ajudando a descobrir se houve furto sobre o valor total de vendas. Além disso irá ter uma certa economia, pois não será necessário contratar um funcionário para conferir a quantidade de tickets e saber quantas passagens foram vendidas. Isso proporcionará uma maior ‘velocidade’ neste processo de verificação, uma vez que quando for registrado pela máquina (a venda de uma passagem) imediatamente, será enviada para o banco de dados do site.  Não temos um preço estimado, mas pode sair não tão barato. </p>
+			
+			<br>
+			<br>
+			
+			<h2 class="titulo" style="background-color: none"> Objetivos </h2>
+			<img src="onibus.jpg" width="400px" class="imagem1"/>
+			
+			<p class="texto"; style="background-color: none">
+					
+				Gerais: Aumentar os lucros das empresas de ônibus de viagens.
+				<br>
+				<br>
+				Específicos: Modelar/obter uma máquina (ou um aplicativo) que automatize o processo de venda de tickets; Fazer um site utilizando banco de dados para armazenar os dados das vendas; Encontrar um meio de certificar que todas as pessoas que entraram e saíram do ônibus compraram as passagens.
+		
+			</p>
+
+			<br>
+			<br>
+
+			<h2 class="titulo"> Metodologia </h2>
+			<p class="texto"> Iremos fazer um site utilizando HTML, o qual conterá um banco de dados. Além disso, pretendemos fazer uma máquina que irá registrar as cobranças e enviar os dados para este site. Vamos utilizar Python para a programação. </p>
+
+			<br>
+			<br>
+
+			<table class="tabela" border="l">
+				<tr>
+					<td> <b> Instituto <b> </td>
+					<td> <b> Curso <b> </td>
+				</tr>
+				<tr>
+					<td> IFRN - Campus Caicó </td>
+					<td> Ténico em informática </td>
+				</tr>
+			</table>
+			
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			<h2 class="titulo"> Questionário </h2>
+			<form>
+				<p class="texto" > Nome completo: <input type="text" id="nome"><p>
+				<p class="texto" > Idade: <input type="text" id="idade"><p>
+				<p class="texto" > Música favorita: <input type="text" id="music"><p>
+				<p class="texto" > Série/desenho preferido: <input type="text" id="serie"><p>
+				<input type="button" value="Enviar dados" onClick="salvar(true)" class="button"> 
+				<input type="button" value="Verificar" onClick="verificar()" class="button">
+				<input type="reset" value="Limpar" class="button">
+				<p class="texto" id="aviso" style="color: red; float:right"></p>
+			</form>
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<h2 class="titulo"> Resultados esperados </h2>
+			<p class="texto"> Expandir o projeto para que possa ser usado em larga escala. Pretendemos, se possível, comercializá-lo. </p>
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<p class="rodape"> Todos os direitos reservados  © 2017-2017 </p>
+
+		</div>
+		</center>
+
+		
+
+		
+		<div class="menu">
+			<ul>
+
+				<li>
+					<a>Integrantes</a>
+					<ul>
+						<li>Gustavo	</li>
+						<li>Ian Davi</li>
+						<li>Luan Alferes</li>
+						<li>Caio</li>
+					</ul>
+				</li>
+				<li>
+					<a>Tipo de transporte</a>
+					<ul>
+						<li>Ônibus</li>
+					</ul>
+				</li>
+				<li>
+					<a>Orientador</a>
+					<ul>
+						<li>Romerito</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<p class="fixado2"> </p>
+		<h1 class="fixado"> Automatização de compra de passagens para transporte inter-municipal </h1>
+	
+	</body>
+
+</html>

@@ -10,3 +10,6 @@ def home(request):
 
 	return render(request, 'django_teste/index.html')
 
+def sitezao(request):
+	return render(request, 'django_teste/Site.html')
+
