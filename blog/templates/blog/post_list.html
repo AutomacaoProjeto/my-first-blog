@@ -3,11 +3,33 @@
 <head>
 	<title> localhost é meu zovo </title>
 	<script type="text/javascript">
-		var nome = prompt("Digite seu nome, convidado: "); 
-		alert("Seja bem-vindo " + nome);                               
+		//var nome = prompt("Digite seu nome, convidado: "); 
+		//alert("Seja bem-vindo " + nome);                               
 	</script>
+
+	<style type="text/css">
+		p{
+			color: white;
+			font-family: Century Gothic;
+		}
+
+
+	</style>
 </head>
 <body style="background:#1C1C1C">
 
+	<center>  <h1><p> Blog || Postagens</p></h1>  </center>
+	{% for posts in potes %}
+		<h1> <p> {{posts.title}} </p> </h1>  
+		<p> {{posts.text}} </p>  <!-- PODERIA SER ACRESCENTADO "|linebreaksbr" APÓS "text" PARA TRASNFORMAR TODA QUEBRA DE LINHA EM PARÁGRAFO (TEXTOS GRANDES MAYBE) -->
+		<p style="float: right"> Data de publicação: {{posts.published_date}} </p>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+	{% endfor %}
 </body>
 </html>
