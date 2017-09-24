@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<title> Automação </title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="{% static 'css/blog.css' %}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript">
+		//var nome = prompt("Digite seu nome, convidado: "); 
+		//alert("Seja bem-vindo " + nome);                               
+	</script>
+
+</head>
+<body style="background:#1C1C1C">
+    <div class="page-header">
+        <center> <h1><a href="/"> Blog || Postagens </a></h1> </center>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
