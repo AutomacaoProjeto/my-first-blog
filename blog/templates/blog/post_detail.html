@@ -7,7 +7,10 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-        <h1 id="Laranja">{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        {% if user.is_authenticated %}
+     		<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		{% endif %}
+        <h1 class="Laranja">{{ post.title }}</h1>
+        <p class="texto">{{ post.text|linebreaksbr }}</p>
     </div>
 {% endblock %}

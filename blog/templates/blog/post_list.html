@@ -6,8 +6,9 @@
 	        <div class="date">
 	            {{ posts.published_date }}
 	        </div>
-	        <h1><a id="Laranja" href="{% url 'post_detail' pk=posts.pk %}">{{ posts.title }}</a></h1>
-	        <p>{{ posts.text|linebreaksbr }}</p>
+	        <h1><a class="Laranja" href="{% url 'post_detail' pk=posts.pk %}">{{ posts.title }}</a></h1>
+	        <p class="texto">{{ posts.text|linebreaksbr }}</p>
 	    </div>
 	{% endfor %}
 {% endblock %}
+
